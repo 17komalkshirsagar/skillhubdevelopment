@@ -1,5 +1,5 @@
 export interface CourseType {
-  id: string | number;
+  id: string;
   title: string;
   description: string;
   longDescription?: string;
