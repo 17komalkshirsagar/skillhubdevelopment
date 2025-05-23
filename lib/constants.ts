@@ -1,5 +1,4 @@
 
-
 export const COURSES = [
     {
         id: "mern-bootcamp",
@@ -40,12 +39,11 @@ export const COURSES = [
         isBestseller: false,
         isNew: false,
     },
-
     {
-        id: "ui-ux-design",
+        id: "uiux-design",
         title: "UI/UX Design Principles",
         description: "Understand the basics of user-centered design, wireframing, and usability.",
-        image: "https://images.unsplash.com/photo-1629904853716-f0bc54eea481", // UI/UX tools
+        image: "https://images.unsplash.com/photo-1629904853716-f0bc54eea481",
         duration: "4h 20m",
         level: "Beginner",
         students: 700,
@@ -55,7 +53,7 @@ export const COURSES = [
         isNew: false,
     },
     {
-        id: "javascript-essentials",
+        id: "js-essentials",
         title: "JavaScript Essentials",
         description: "Deep dive into core JavaScript concepts including closures, async/await, and ES6 features.",
         image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600",
@@ -81,6 +79,7 @@ export const COURSES = [
         isNew: true,
     },
 ];
+
 
 
 
