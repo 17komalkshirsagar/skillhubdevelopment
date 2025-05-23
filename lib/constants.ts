@@ -42,7 +42,7 @@ export const COURSES = [
     },
 
     {
-        id: 4,
+        id: "ui-ux-design",
         title: "UI/UX Design Principles",
         description: "Understand the basics of user-centered design, wireframing, and usability.",
         image: "https://images.unsplash.com/photo-1629904853716-f0bc54eea481", // UI/UX tools
@@ -55,7 +55,7 @@ export const COURSES = [
         isNew: false,
     },
     {
-        id: 5,
+        id: "javascript-essentials",
         title: "JavaScript Essentials",
         description: "Deep dive into core JavaScript concepts including closures, async/await, and ES6 features.",
         image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600",
@@ -68,7 +68,7 @@ export const COURSES = [
         isNew: false,
     },
     {
-        id: 6,
+        id: "python-data-science",
         title: "Python for Data Science",
         description: "Learn how to use Python for data analysis, visualization, and machine learning basics.",
         image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600",
