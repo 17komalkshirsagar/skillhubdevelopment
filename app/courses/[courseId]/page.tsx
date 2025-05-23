@@ -37,10 +37,10 @@ export default function CoursePage({ params }: { params: { courseId: string } })
     <div className="container mx-auto px-4 md:px-6 py-16 md:py-24">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
-          <CourseContent course={course} />
+          <CourseContent course={{ ...course, id: String(course.id) }} />
         </div>
         <div className="lg:col-span-1">
-          <CourseSidebar course={course} />
+          <CourseSidebar course={{ ...course, id: String(course.id) }} />
         </div>
       </div>
     </div>
