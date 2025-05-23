@@ -1,16 +1,17 @@
-import Link from "next/link";
-import { notFound } from "next/navigation";
-import { Metadata } from "next";
+import { COURSES } from "@/lib/constants";
 import CourseContent from "@/components/courses/CourseContent";
 import CourseSidebar from "@/components/courses/CourseSidebar";
-import { COURSES } from "@/lib/constants";
+import { notFound } from "next/navigation";
+import { Metadata } from "next";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { courseId: string };
-}): Promise<Metadata> {
-  const course = COURSES.find((course) => course.id === params.courseId);
+export async function generateStaticParams() {
+  return COURSES.map(course => ({
+    courseId: course.id,
+  }));
+}
+
+export async function generateMetadata({ params }: { params: { courseId: string } }): Promise<Metadata> {
+  const course = COURSES.find(course => course.id === params.courseId);
 
   if (!course) {
     return {
@@ -26,7 +27,7 @@ export async function generateMetadata({
 }
 
 export default function CoursePage({ params }: { params: { courseId: string } }) {
-  const course = COURSES.find((course) => course.id === params.courseId);
+  const course = COURSES.find(course => course.id === params.courseId);
 
   if (!course) {
     notFound();
