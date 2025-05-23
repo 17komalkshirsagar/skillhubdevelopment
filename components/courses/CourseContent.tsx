@@ -2,24 +2,24 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { 
-  Clock, 
-  BarChart, 
-  Users, 
-  PlayCircle, 
-  FileText, 
-  Award, 
-  CheckCircle, 
-  Lock 
+import {
+  Clock,
+  BarChart,
+  Users,
+  PlayCircle,
+  FileText,
+  Award,
+  CheckCircle,
+  Lock
 } from "lucide-react";
-import { 
-  Tabs, 
-  TabsContent, 
-  TabsList, 
-  TabsTrigger 
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger
 } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
-import { 
+import {
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -27,8 +27,7 @@ import {
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { CourseType } from "@/lib/types";
-
+import { CourseType } from "@/lib/types"
 interface CourseContentProps {
   course: CourseType;
 }
@@ -43,7 +42,7 @@ export default function CourseContent({ course }: CourseContentProps) {
       <div className="mb-8">
         <h1 className="text-3xl md:text-4xl font-bold mb-4">{course.title}</h1>
         <p className="text-lg text-muted-foreground mb-6">{course.description}</p>
-        
+
         <div className="flex flex-wrap gap-4 mb-6">
           <div className="flex items-center">
             <Clock className="h-5 w-5 mr-2 text-muted-foreground" />
@@ -58,7 +57,7 @@ export default function CourseContent({ course }: CourseContentProps) {
             <span>{course.students}+ students</span>
           </div>
         </div>
-        
+
         <div className="relative h-[400px] rounded-lg overflow-hidden mb-8">
           <img
             src={course.image}
@@ -72,14 +71,14 @@ export default function CourseContent({ course }: CourseContentProps) {
           </div>
         </div>
       </div>
-      
+
       <Tabs defaultValue="overview" className="mb-12">
         <TabsList className="grid grid-cols-3 mb-8">
           <TabsTrigger value="overview">Overview</TabsTrigger>
           <TabsTrigger value="curriculum">Curriculum</TabsTrigger>
           <TabsTrigger value="instructor">Instructor</TabsTrigger>
         </TabsList>
-        
+
         <TabsContent value="overview" className="space-y-6">
           <div>
             <h3 className="text-xl font-semibold mb-4">About This Course</h3>
@@ -89,7 +88,7 @@ export default function CourseContent({ course }: CourseContentProps) {
               By the end of this course, you'll have the skills to build complete web applications using the MERN stack.`}
             </p>
           </div>
-          
+
           <div>
             <h3 className="text-xl font-semibold mb-4">What You'll Learn</h3>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -101,7 +100,7 @@ export default function CourseContent({ course }: CourseContentProps) {
               ))}
             </ul>
           </div>
-          
+
           <div>
             <h3 className="text-xl font-semibold mb-4">Requirements</h3>
             <ul className="space-y-2">
@@ -114,7 +113,7 @@ export default function CourseContent({ course }: CourseContentProps) {
             </ul>
           </div>
         </TabsContent>
-        
+
         <TabsContent value="curriculum">
           <div className="mb-6">
             <h3 className="text-xl font-semibold mb-2">Course Content</h3>
@@ -122,7 +121,7 @@ export default function CourseContent({ course }: CourseContentProps) {
               {course.modules?.length || 10} modules • {course.lectures || 42} lectures • {course.duration} total
             </p>
           </div>
-          
+
           <Accordion type="multiple" className="w-full">
             {(course.modules || Array(5).fill(0).map((_, i) => ({
               title: `Module ${i + 1}: ${["Introduction to MERN", "MongoDB Essentials", "Express.js & API Development", "React.js Fundamentals", "Node.js & Server-side Development"][i] || "Module"}`,
@@ -164,7 +163,7 @@ export default function CourseContent({ course }: CourseContentProps) {
             ))}
           </Accordion>
         </TabsContent>
-        
+
         <TabsContent value="instructor">
           <div className="flex flex-col md:flex-row gap-6 items-start">
             <div className="w-32 h-32 rounded-full overflow-hidden shrink-0">
@@ -174,13 +173,13 @@ export default function CourseContent({ course }: CourseContentProps) {
                 className="w-full h-full object-cover"
               />
             </div>
-            
+
             <div>
               <h3 className="text-xl font-semibold mb-2">Akash Dhone</h3>
               <p className="text-muted-foreground mb-4">
                 Senior Full-Stack Developer & Instructor
               </p>
-              
+
               <div className="flex flex-wrap gap-4 mb-4">
                 <div className="flex items-center">
                   <FileText className="h-5 w-5 mr-2 text-muted-foreground" />
@@ -195,11 +194,11 @@ export default function CourseContent({ course }: CourseContentProps) {
                   <span>8+ Years Teaching</span>
                 </div>
               </div>
-              
+
               <p className="text-muted-foreground">
-                Akash is a senior full-stack developer with over 8 years of experience working with the MERN stack. 
-                He has helped hundreds of students transition from beginners to professional developers through his practical, 
-                project-based teaching approach. His courses focus on building real-world applications and solving common 
+                Akash is a senior full-stack developer with over 8 years of experience working with the MERN stack.
+                He has helped hundreds of students transition from beginners to professional developers through his practical,
+                project-based teaching approach. His courses focus on building real-world applications and solving common
                 development challenges.
               </p>
             </div>
