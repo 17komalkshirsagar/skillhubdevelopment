@@ -1,5 +1,6 @@
+import { CourseType } from "./types";
 
-export const COURSES = [
+export const COURSES: CourseType[] = [
     {
         id: "mern-bootcamp",
         title: "MERN Stack Bootcamp",
